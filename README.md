@@ -37,7 +37,50 @@ or
 
 ## Usage
 
-Examples will be published soon.
+Initialize new number:
+
+```swift
+let integerNumber = Number(value: 10)
+let floatNumber = Number(value: 4.3)
+let doubleNumber = Number(value: 9.124)
+```
+
+Check if number is integer:
+
+```swift
+let double1 = Number(value: 9.124)
+double1.isInteger // false
+
+let double2 = Number(value: 9.0)
+double2.isInteger // true
+```
+
+Check if number is natural:
+
+```swift
+let int = Number(value: -20)
+int1.isNatural // false
+
+let double = Number(value: 20.0)
+double.isNatural // true
+```
+
+Check if number is prime:
+
+```swift
+let int1 = Number(value: 10)
+int1.isPrime // false
+
+let int2 = Number(value: 3)
+int2.isPrime // true
+```
+
+Obtain natural divisors:
+
+```swift
+let int = Number(value: 16)
+let divisors = int.naturalDivisors // [1, 2, 4, 8, 16]
+```
 
 ## License
 
