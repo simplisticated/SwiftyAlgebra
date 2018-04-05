@@ -29,7 +29,7 @@ Provides set of tools for managing numbers in Swift.
                    DESC
 
   s.homepage     = "https://github.com/igormatyushkin014/SwiftyAlgebra"
-  s.screenshots  = "https://github.com/igormatyushkin014/SwiftyAlgebra/raw/master/Images/logo_2048_2048.png"
+  s.screenshots  = "https://github.com/igormatyushkin014/SwiftyAlgebra/raw/master/Images/logo_2048_600.png"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
