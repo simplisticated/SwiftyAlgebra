@@ -96,6 +96,8 @@ Provides set of tools for managing numbers in Swift.
 
   # s.public_header_files = "Classes/**/*.h"
 
+  s.swift_version = "4.0"
+
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
