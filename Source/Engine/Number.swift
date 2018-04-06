@@ -6,8 +6,6 @@
 //  Copyright © 2018 Igor Matyushkin. All rights reserved.
 //
 
-import UIKit
-
 public class Number {
     
     // MARK: Class variables & properties
@@ -37,7 +35,78 @@ public class Number {
     
     // MARK: Object variables & properties
     
-    fileprivate var value: Any
+    private var value: Any
+    
+    // MARK: Public object methods
+    
+    // MARK: Private object methods
+    
+    // MARK: Protocol implementation
+    
+}
+
+/*
+ Conversions.
+ */
+public extension Number {
+    
+    public var integer: Int {
+        get {
+            switch self.value {
+            case is Int:
+                return self.value as! Int
+            case is Float:
+                let floatValue = self.value as! Float
+                return Int(floatValue)
+            case is Double:
+                let doubleValue = self.value as! Double
+                return Int(doubleValue)
+            default:
+                return self.value as! Int
+            }
+        }
+    }
+    
+    public var float: Float {
+        get {
+            switch self.value {
+            case is Int:
+                let integerValue = self.value as! Int
+                return Float(integerValue)
+            case is Float:
+                return self.value as! Float
+            case is Double:
+                let doubleValue = self.value as! Double
+                return Float(doubleValue)
+            default:
+                return self.value as! Float
+            }
+        }
+    }
+    
+    public var double: Double {
+        get {
+            switch self.value {
+            case is Int:
+                let integerValue = self.value as! Int
+                return Double(integerValue)
+            case is Float:
+                let floatValue = self.value as! Float
+                return Double(floatValue)
+            case is Double:
+                return self.value as! Double
+            default:
+                return self.value as! Double
+            }
+        }
+    }
+    
+}
+
+/*
+ Integer numbers.
+ */
+public extension Number {
     
     public var isInteger: Bool {
         get {
@@ -102,11 +171,5 @@ public class Number {
             })
         }
     }
-    
-    // MARK: Public object methods
-    
-    // MARK: Private object methods
-    
-    // MARK: Protocol implementation
     
 }

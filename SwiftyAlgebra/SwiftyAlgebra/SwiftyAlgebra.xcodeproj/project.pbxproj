@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		694088C02075F95700147986 /* SwiftyAlgebra.h in Headers */ = {isa = PBXBuildFile; fileRef = 694088BE2075F95700147986 /* SwiftyAlgebra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		694088CC2075F9F500147986 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694088CB2075F9F500147986 /* Number.swift */; };
-		694088D02075FA9500147986 /* IntExtensionNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694088CF2075FA9500147986 /* IntExtensionNumber.swift */; };
-		694088D42076B46A00147986 /* FloatExtensionNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694088D32076B46A00147986 /* FloatExtensionNumber.swift */; };
-		694088D62076B48600147986 /* DoubleExtensionNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694088D52076B48600147986 /* DoubleExtensionNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,9 +16,6 @@
 		694088BE2075F95700147986 /* SwiftyAlgebra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyAlgebra.h; sourceTree = "<group>"; };
 		694088BF2075F95700147986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		694088CB2075F9F500147986 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
-		694088CF2075FA9500147986 /* IntExtensionNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensionNumber.swift; sourceTree = "<group>"; };
-		694088D32076B46A00147986 /* FloatExtensionNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatExtensionNumber.swift; sourceTree = "<group>"; };
-		694088D52076B48600147986 /* DoubleExtensionNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensionNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,20 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				694088CA2075F9DA00147986 /* Engine */,
-				694088C72075F97C00147986 /* Extensions */,
 			);
 			name = Source;
 			path = ../../../Source;
-			sourceTree = "<group>";
-		};
-		694088C72075F97C00147986 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				694088CF2075FA9500147986 /* IntExtensionNumber.swift */,
-				694088D32076B46A00147986 /* FloatExtensionNumber.swift */,
-				694088D52076B48600147986 /* DoubleExtensionNumber.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		694088CA2075F9DA00147986 /* Engine */ = {
@@ -170,9 +153,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				694088CC2075F9F500147986 /* Number.swift in Sources */,
-				694088D42076B46A00147986 /* FloatExtensionNumber.swift in Sources */,
-				694088D62076B48600147986 /* DoubleExtensionNumber.swift in Sources */,
-				694088D02075FA9500147986 /* IntExtensionNumber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
