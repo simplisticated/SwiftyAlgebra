@@ -45,6 +45,15 @@ let floatNumber = Number(value: 4.3)
 let doubleNumber = Number(value: 9.124)
 ```
 
+Conversions:
+
+```swift
+let number = Number(value: 9.124)
+number.int // 9
+number.float // 9.124
+number.double // 9.124
+```
+
 Check if number is integer:
 
 ```swift
