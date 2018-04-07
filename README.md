@@ -256,6 +256,134 @@ Full list of supported operators:
 		</td>
 	</tr>
 	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			+=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) += Number(value: 2)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			+=
+		</td>
+		<td>
+			Int
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) += 2
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			+=
+		</td>
+		<td>
+			Float
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) += 2.0
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			+=
+		</td>
+		<td>
+			Double
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) += 2.0
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Int
+		</td>
+		<td>
+			+=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				var value: Int = 10; value += Number(value: 2)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Float
+		</td>
+		<td>
+			+=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				var value: Float = 10.0; value += Number(value: 2.0)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Float
+		</td>
+		<td>
+			+=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				var value: Double = 10.0; value += Number(value: 2.0)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Float
+		</td>
+		<td>
+			++
+		</td>
+		<td>
+			None
+		</td>
+		<td>
+			<code>
+				let number = Number(value: 10); number++
+			</code>
+		</td>
+	</tr>
+	<tr>
 		<th colspan="4">
 			Subtraction
 		</th>
@@ -369,6 +497,134 @@ Full list of supported operators:
 		<td>
 			<code>
 				10.0 - Number(value: 2)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			-=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) -= Number(value: 2)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			-=
+		</td>
+		<td>
+			Int
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) -= 2
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			-=
+		</td>
+		<td>
+			Float
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) -= 2.0
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			-=
+		</td>
+		<td>
+			Double
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) -= 2.0
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Int
+		</td>
+		<td>
+			-=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				var value: Int = 10; value -= Number(value: 2)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Float
+		</td>
+		<td>
+			-=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				var value: Float = 10.0; value -= Number(value: 2.0)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Float
+		</td>
+		<td>
+			-=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				var value: Double = 10.0; value -= Number(value: 2.0)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Float
+		</td>
+		<td>
+			--
+		</td>
+		<td>
+			None
+		</td>
+		<td>
+			<code>
+				let number = Number(value: 10); number--
 			</code>
 		</td>
 	</tr>
@@ -490,6 +746,118 @@ Full list of supported operators:
 		</td>
 	</tr>
 	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			*=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) *= Number(value: 2)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			*=
+		</td>
+		<td>
+			Int
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) *= 2
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			*=
+		</td>
+		<td>
+			Float
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) *= 2.0
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			*=
+		</td>
+		<td>
+			Double
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) *= 2.0
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Int
+		</td>
+		<td>
+			*=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				var value: Int = 10; value *= Number(value: 2)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Float
+		</td>
+		<td>
+			*=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				var value: Float = 10.0; value *= Number(value: 2.0)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Float
+		</td>
+		<td>
+			*=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				var value: Double = 10.0; value *= Number(value: 2.0)
+			</code>
+		</td>
+	</tr>
+	<tr>
 		<th colspan="4">
 			Division
 		</th>
@@ -603,6 +971,118 @@ Full list of supported operators:
 		<td>
 			<code>
 				10.0 / Number(value: 2)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			/=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) /= Number(value: 2)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			/=
+		</td>
+		<td>
+			Int
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) /= 2
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			/=
+		</td>
+		<td>
+			Float
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) /= 2.0
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Number
+		</td>
+		<td>
+			/=
+		</td>
+		<td>
+			Double
+		</td>
+		<td>
+			<code>
+				Number(value: 10.0) /= 2.0
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Int
+		</td>
+		<td>
+			/=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				var value: Int = 10; value /= Number(value: 2)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Float
+		</td>
+		<td>
+			/=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				var value: Float = 10.0; value /= Number(value: 2.0)
+			</code>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Float
+		</td>
+		<td>
+			/=
+		</td>
+		<td>
+			Number
+		</td>
+		<td>
+			<code>
+				var value: Double = 10.0; value /= Number(value: 2.0)
 			</code>
 		</td>
 	</tr>
