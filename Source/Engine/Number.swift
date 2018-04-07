@@ -131,7 +131,7 @@ public extension Number {
                 return false
             }
             
-            let integerValue = self.value as! Int
+            let integerValue = self.integer
             return integerValue > 0
         }
     }
@@ -142,7 +142,7 @@ public extension Number {
                 return false
             }
             
-            let integerValue = self.value as! Int
+            let integerValue = self.integer
             
             guard integerValue > 2 else {
                 return integerValue == 1
@@ -160,7 +160,7 @@ public extension Number {
                 return []
             }
             
-            let integerValue = self.value as! Int
+            let integerValue = self.integer
             
             guard integerValue > 0 else {
                 return []
