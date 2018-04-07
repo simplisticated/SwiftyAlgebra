@@ -173,3 +173,255 @@ public extension Number {
     }
     
 }
+
+/*
+ Operators.
+ */
+
+public extension Number {
+    
+    // MARK: Addition
+    
+    public static func +(left: Number, right: Number) -> Number {
+        return Number(value: left.double + right.double)
+    }
+    
+    public static func +(left: Number, right: Int) -> Number {
+        return Number(value: left.double + Double(right))
+    }
+    
+    public static func +(left: Number, right: Float) -> Number {
+        return Number(value: left.double + Double(right))
+    }
+    
+    public static func +(left: Number, right: Double) -> Number {
+        return Number(value: left.double + right)
+    }
+    
+    public static func +(left: Int, right: Number) -> Number {
+        return Number(value: Double(left) + right.double)
+    }
+    
+    public static func +(left: Float, right: Number) -> Number {
+        return Number(value: Double(left) + right.double)
+    }
+    
+    public static func +(left: Double, right: Number) -> Number {
+        return Number(value: left + right.double)
+    }
+    
+    public static func +=(left: Number, right: Number) {
+        left.value = left.double + right.double
+    }
+    
+    public static func +=(left: Number, right: Int) {
+        left.value = left.double + Double(right)
+    }
+    
+    public static func +=(left: Number, right: Float) {
+        left.value = left.double + Double(right)
+    }
+    
+    public static func +=(left: Number, right: Double) {
+        left.value = left.double + right
+    }
+    
+    public static func +=(left: inout Int, right: Number) {
+        left = left + right.integer
+    }
+    
+    public static func +=(left: inout Float, right: Number) {
+        left = left + right.float
+    }
+    
+    public static func +=(left: inout Double, right: Number) {
+        left = left + right.double
+    }
+    
+    @discardableResult
+    public static postfix func ++(number: Number) -> Number {
+        number.value = number.double + 1.0
+        return number
+    }
+    
+    // MARK: Subtraction
+    
+    public static func -(left: Number, right: Number) -> Number {
+        return Number(value: left.double - right.double)
+    }
+    
+    public static func -(left: Number, right: Int) -> Number {
+        return Number(value: left.double - Double(right))
+    }
+    
+    public static func -(left: Number, right: Float) -> Number {
+        return Number(value: left.double - Double(right))
+    }
+    
+    public static func -(left: Number, right: Double) -> Number {
+        return Number(value: left.double - right)
+    }
+    
+    public static func -(left: Int, right: Number) -> Number {
+        return Number(value: Double(left) - right.double)
+    }
+    
+    public static func -(left: Float, right: Number) -> Number {
+        return Number(value: Double(left) - right.double)
+    }
+    
+    public static func -(left: Double, right: Number) -> Number {
+        return Number(value: left - right.double)
+    }
+    
+    public static func -=(left: Number, right: Number) {
+        left.value = left.double - right.double
+    }
+    
+    public static func -=(left: Number, right: Int) {
+        left.value = left.double - Double(right)
+    }
+    
+    public static func -=(left: Number, right: Float) {
+        left.value = left.double - Double(right)
+    }
+    
+    public static func -=(left: Number, right: Double) {
+        left.value = left.double - right
+    }
+    
+    public static func -=(left: inout Int, right: Number) {
+        left = left - right.integer
+    }
+    
+    public static func -=(left: inout Float, right: Number) {
+        left = left - right.float
+    }
+    
+    public static func -=(left: inout Double, right: Number) {
+        left = left - right.double
+    }
+    
+    @discardableResult
+    public static postfix func --(number: Number) -> Number {
+        number.value = number.double - 1.0
+        return number
+    }
+    
+    // MARK: Multiplication
+    
+    public static func *(left: Number, right: Number) -> Number {
+        return Number(value: left.double * right.double)
+    }
+    
+    public static func *(left: Number, right: Int) -> Number {
+        return Number(value: left.double * Double(right))
+    }
+    
+    public static func *(left: Number, right: Float) -> Number {
+        return Number(value: left.double * Double(right))
+    }
+    
+    public static func *(left: Number, right: Double) -> Number {
+        return Number(value: left.double * right)
+    }
+    
+    public static func *(left: Int, right: Number) -> Number {
+        return Number(value: Double(left) * right.double)
+    }
+    
+    public static func *(left: Float, right: Number) -> Number {
+        return Number(value: Double(left) * right.double)
+    }
+    
+    public static func *(left: Double, right: Number) -> Number {
+        return Number(value: left * right.double)
+    }
+    
+    public static func *=(left: Number, right: Number) {
+        left.value = left.double * right.double
+    }
+    
+    public static func *=(left: Number, right: Int) {
+        left.value = left.double * Double(right)
+    }
+    
+    public static func *=(left: Number, right: Float) {
+        left.value = left.double * Double(right)
+    }
+    
+    public static func *=(left: Number, right: Double) {
+        left.value = left.double * right
+    }
+    
+    public static func *=(left: inout Int, right: Number) {
+        left = left * right.integer
+    }
+    
+    public static func *=(left: inout Float, right: Number) {
+        left = left * right.float
+    }
+    
+    public static func *=(left: inout Double, right: Number) {
+        left = left * right.double
+    }
+    
+    // MARK: Division
+    
+    public static func /(left: Number, right: Number) -> Number {
+        return Number(value: left.double / right.double)
+    }
+    
+    public static func /(left: Number, right: Int) -> Number {
+        return Number(value: left.double / Double(right))
+    }
+    
+    public static func /(left: Number, right: Float) -> Number {
+        return Number(value: left.double / Double(right))
+    }
+    
+    public static func /(left: Number, right: Double) -> Number {
+        return Number(value: left.double / right)
+    }
+    
+    public static func /(left: Int, right: Number) -> Number {
+        return Number(value: Double(left) / right.double)
+    }
+    
+    public static func /(left: Float, right: Number) -> Number {
+        return Number(value: Double(left) / right.double)
+    }
+    
+    public static func /(left: Double, right: Number) -> Number {
+        return Number(value: left / right.double)
+    }
+    
+    public static func /=(left: Number, right: Number) {
+        left.value = left.double / right.double
+    }
+    
+    public static func /=(left: Number, right: Int) {
+        left.value = left.double / Double(right)
+    }
+    
+    public static func /=(left: Number, right: Float) {
+        left.value = left.double / Double(right)
+    }
+    
+    public static func /=(left: Number, right: Double) {
+        left.value = left.double / right
+    }
+    
+    public static func /=(left: inout Int, right: Number) {
+        left = left / right.integer
+    }
+    
+    public static func /=(left: inout Float, right: Number) {
+        left = left / right.float
+    }
+    
+    public static func /=(left: inout Double, right: Number) {
+        left = left / right.double
+    }
+    
+}
