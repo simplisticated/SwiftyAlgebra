@@ -144,13 +144,21 @@ public extension Number {
             
             let integerValue = self.integer
             
-            guard integerValue > 2 else {
-                return integerValue == 1
+            guard integerValue > 0 else {
+                return false
             }
             
-            return Array(2...(integerValue - 1)).filter({ (value) -> Bool in
-                return integerValue % value == 0
-            }).count == 0
+            guard integerValue > 2 else {
+                return true
+            }
+            
+            for i in 2..<integerValue {
+                if integerValue % i == 0 {
+                    return false
+                }
+            }
+            
+            return true
         }
     }
     
@@ -169,6 +177,58 @@ public extension Number {
             return Array(1...integerValue).filter({ (value) -> Bool in
                 return integerValue % value == 0
             })
+        }
+    }
+    
+    public var primeDivisors: [Int] {
+        get {
+            guard self.isNatural else {
+                return []
+            }
+            
+            let integerValue = self.integer
+            
+            return Array(1...integerValue).filter({ (value) -> Bool in
+                guard Number(value: value).isPrime else {
+                    return false
+                }
+                
+                return integerValue % value == 0
+            })
+        }
+    }
+    
+    public var primeFactorization: [Int] {
+        get {
+            guard self.isNatural else {
+                return []
+            }
+            
+            guard !self.isPrime else {
+                return []
+            }
+            
+            let integerValue = self.integer
+            var divident = integerValue
+            var divisors = [Int]()
+            
+            while divident > 1 {
+                for i in 2..<integerValue {
+                    guard Number(value: i).isPrime else {
+                        continue
+                    }
+                    
+                    guard divident % i == 0 else {
+                        continue
+                    }
+                    
+                    divisors.append(i)
+                    divident /= i
+                    break
+                }
+            }
+            
+            return divisors
         }
     }
     
