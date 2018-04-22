@@ -96,11 +96,25 @@ let int2 = Number(value: 3)
 int2.isPrime // true
 ```
 
-Obtain natural divisors:
+Natural divisors:
 
 ```swift
 let int = Number(value: 16)
 let divisors = int.naturalDivisors // [1, 2, 4, 8, 16]
+```
+
+Prime divisors:
+
+```swift
+let int = Number(value: 150)
+let divisors = int.primeDivisors // [2, 3, 5]
+```
+
+Prime factorization:
+
+```swift
+let int = Number(value: 150)
+let divisors = int.primeFactorization // [2, 3, 5, 5]
 ```
 
 ### Operators
