@@ -71,6 +71,10 @@ open class Task<Source, Result> {
     public func didFinish(withResult result: Result) {
         self.dispatchWorkItem = nil
         
+        guard !self.isCancelled else {
+            return
+        }
+        
         DispatchQueue.main.async { [weak self] in
             guard let handler = self?.resultHandler else {
                 return
