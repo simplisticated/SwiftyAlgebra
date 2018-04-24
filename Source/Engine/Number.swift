@@ -213,7 +213,7 @@ public extension Number {
             var divisors = [Int]()
             
             while divident > 1 {
-                for i in 2..<integerValue {
+                for i in 2...divident {
                     guard Number(value: i).isPrime else {
                         continue
                     }
@@ -230,6 +230,80 @@ public extension Number {
             
             return divisors
         }
+    }
+    
+    public func primeFactorization(withCompletion completion: @escaping (_ divisors: [Int]) -> Void) -> PrimeFactorizationTask {
+        let task = PrimeFactorizationTask(source: self) { (result, isCancelled) in
+            if result != nil {
+                completion(result!)
+            }
+        }
+        task.start()
+        return task
+    }
+    
+}
+
+public extension Number {
+    
+    public class PrimeFactorizationTask: Task<Number, [Int]> {
+        
+        public override func perform(withSource source: Number) {
+            guard source.isNatural else {
+                self.didFinish(withResult: [])
+                return
+            }
+            
+            guard !source.isPrime else {
+                guard !self.isCancelled else {
+                    return
+                }
+                
+                self.didFinish(withResult: [])
+                return
+            }
+            
+            let integerValue = source.integer
+            var divident = integerValue
+            var divisors = [Int]()
+            
+            while divident > 1 {
+                guard !self.isCancelled else {
+                    return
+                }
+                
+                for i in 2...divident {
+                    guard !self.isCancelled else {
+                        return
+                    }
+                    
+                    guard Number(value: i).isPrime else {
+                        guard !self.isCancelled else {
+                            return
+                        }
+                        
+                        continue
+                    }
+                    
+                    guard divident % i == 0 else {
+                        continue
+                    }
+                    
+                    divisors.append(i)
+                    divident /= i
+                    break
+                }
+                
+                self.didProgress(1.0 - (Float(divident) / Float(integerValue)))
+            }
+            
+            guard !self.isCancelled else {
+                return
+            }
+            
+            self.didFinish(withResult: divisors)
+        }
+        
     }
     
 }
