@@ -198,6 +198,16 @@ public extension Number {
         }
     }
     
+    public func primeDivisors(withCompletion completion: @escaping (_ divisors: [Int]) -> Void) -> PrimeDivisorsTask {
+        let task = PrimeDivisorsTask(source: self) { (result, isCancelled) in
+            if result != nil {
+                completion(result!)
+            }
+        }
+        task.start()
+        return task
+    }
+    
     public var primeFactorization: [Int] {
         get {
             guard self.isNatural else {
@@ -246,6 +256,39 @@ public extension Number {
 
 public extension Number {
     
+    public class PrimeDivisorsTask: Task<Number, [Int]> {
+        
+        public override func perform(withSource source: Number) {
+            guard source.isNatural else {
+                self.didFinish(withResult: [])
+                return
+            }
+            
+            let integerValue = source.integer
+            
+            var divisors = [Int]()
+            
+            for i in 1...integerValue {
+                guard Number(value: i).isPrime else {
+                    continue
+                }
+                
+                guard integerValue % i == 0 else {
+                    continue
+                }
+                
+                divisors.append(i)
+                
+                guard !self.isCancelled else {
+                    return
+                }
+            }
+            
+            self.didFinish(withResult: divisors)
+        }
+        
+    }
+    
     public class PrimeFactorizationTask: Task<Number, [Int]> {
         
         public override func perform(withSource source: Number) {
@@ -278,10 +321,6 @@ public extension Number {
                     }
                     
                     guard Number(value: i).isPrime else {
-                        guard !self.isCancelled else {
-                            return
-                        }
-                        
                         continue
                     }
                     
@@ -295,10 +334,6 @@ public extension Number {
                 }
                 
                 self.didProgress(1.0 - (Float(divident) / Float(integerValue)))
-            }
-            
-            guard !self.isCancelled else {
-                return
             }
             
             self.didFinish(withResult: divisors)
