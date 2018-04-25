@@ -138,15 +138,11 @@ public extension Number {
     
     public var isPrime: Bool {
         get {
-            guard self.isInteger else {
+            guard self.isNatural else {
                 return false
             }
             
             let integerValue = self.integer
-            
-            guard integerValue > 0 else {
-                return false
-            }
             
             guard integerValue > 2 else {
                 return true
@@ -160,6 +156,16 @@ public extension Number {
             
             return true
         }
+    }
+    
+    public func isPrime(withCompletion completion: @escaping (_ isPrime: Bool) -> Void) -> Cancellable {
+        let task = IsPrimeTask(source: self) { (result, isCancelled) in
+            if result != nil {
+                completion(result!)
+            }
+        }
+        task.start()
+        return task
     }
     
     public var naturalDivisors: [Int] {
@@ -180,6 +186,16 @@ public extension Number {
         }
     }
     
+    public func naturalDivisors(withCompletion completion: @escaping (_ divisors: [Int]) -> Void) -> Cancellable {
+        let task = NaturalDivisorsTask(source: self) { (result, isCancelled) in
+            if result != nil {
+                completion(result!)
+            }
+        }
+        task.start()
+        return task
+    }
+    
     public var primeDivisors: [Int] {
         get {
             guard self.isNatural else {
@@ -198,7 +214,7 @@ public extension Number {
         }
     }
     
-    public func primeDivisors(withCompletion completion: @escaping (_ divisors: [Int]) -> Void) -> PrimeDivisorsTask {
+    public func primeDivisors(withCompletion completion: @escaping (_ divisors: [Int]) -> Void) -> Cancellable {
         let task = PrimeDivisorsTask(source: self) { (result, isCancelled) in
             if result != nil {
                 completion(result!)
@@ -242,7 +258,7 @@ public extension Number {
         }
     }
     
-    public func primeFactorization(withCompletion completion: @escaping (_ divisors: [Int]) -> Void) -> PrimeFactorizationTask {
+    public func primeFactorization(withCompletion completion: @escaping (_ divisors: [Int]) -> Void) -> Cancellable {
         let task = PrimeFactorizationTask(source: self) { (result, isCancelled) in
             if result != nil {
                 completion(result!)
@@ -254,7 +270,70 @@ public extension Number {
     
 }
 
+/*
+ Tasks.
+ */
 public extension Number {
+    
+    public class IsPrimeTask: Task<Number, Bool> {
+        
+        public override func perform(withSource source: Number) {
+            guard source.isNatural else {
+                self.didFinish(withResult: false)
+                return
+            }
+            
+            let integerValue = source.integer
+            
+            guard integerValue > 2 else {
+                self.didFinish(withResult: true)
+                return
+            }
+            
+            for i in 2..<integerValue {
+                if integerValue % i == 0 {
+                    self.didFinish(withResult: false)
+                    return
+                }
+                
+                guard !self.isCancelled else {
+                    return
+                }
+            }
+            
+            self.didFinish(withResult: true)
+        }
+        
+    }
+    
+    public class NaturalDivisorsTask: Task<Number, [Int]> {
+        
+        public override func perform(withSource source: Number) {
+            guard source.isNatural else {
+                self.didFinish(withResult: [])
+                return
+            }
+            
+            let integerValue = source.integer
+            
+            var divisors = [Int]()
+            
+            for i in 1...integerValue {
+                guard integerValue % i == 0 else {
+                    continue
+                }
+                
+                divisors.append(i)
+                
+                guard !self.isCancelled else {
+                    return
+                }
+            }
+            
+            self.didFinish(withResult: divisors)
+        }
+        
+    }
     
     public class PrimeDivisorsTask: Task<Number, [Int]> {
         
