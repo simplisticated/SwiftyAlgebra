@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class Task<Source, Result> {
+open class Task<Source, Result>: Cancellable {
     
     // MARK: Class variables & properties
     
