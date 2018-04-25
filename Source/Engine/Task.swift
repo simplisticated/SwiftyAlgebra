@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class Task<Source, Result>: Cancellable {
+open class Task<Source, Result>: Asynchronous {
     
     // MARK: Class variables & properties
     
@@ -18,9 +18,9 @@ open class Task<Source, Result>: Cancellable {
     
     // MARK: Initializers
     
-    public init(source: Source, onResult resultHandler: @escaping ResultHandler) {
+    public init(source: Source) {
         self.source = source
-        self.resultHandler = resultHandler
+        self.progress = 0.0
         self.isCancelled = false
     }
     
@@ -32,6 +32,12 @@ open class Task<Source, Result>: Cancellable {
     // MARK: Object variables & properties
     
     public fileprivate(set) var source: Source
+    
+    public var progress: Float {
+        didSet {
+            self.progressHandler?(progress)
+        }
+    }
     
     fileprivate var resultHandler: ResultHandler?
     
@@ -60,12 +66,12 @@ open class Task<Source, Result>: Cancellable {
         // Do something...
     }
     
-    public func onProgress(_ handler: @escaping ProgressHandler) {
-        self.progressHandler = handler
+    public func onResult(_ handler: @escaping ResultHandler) {
+        self.resultHandler = handler
     }
     
-    public func didProgress(_ progress: Float) {
-        self.progressHandler?(progress)
+    public func onProgress(_ handler: @escaping ProgressHandler) {
+        self.progressHandler = handler
     }
     
     public func didFinish(withResult result: Result) {
