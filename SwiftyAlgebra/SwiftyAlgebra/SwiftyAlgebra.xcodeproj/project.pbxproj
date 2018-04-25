@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690FBB50208D34FF0063E50B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690FBB4F208D34FF0063E50B /* Task.swift */; };
+		691E9983209127540051B750 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691E9982209127540051B750 /* Cancellable.swift */; };
 		694088C02075F95700147986 /* SwiftyAlgebra.h in Headers */ = {isa = PBXBuildFile; fileRef = 694088BE2075F95700147986 /* SwiftyAlgebra.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		694088CC2075F9F500147986 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694088CB2075F9F500147986 /* Number.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		690FBB4F208D34FF0063E50B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		691E9982209127540051B750 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		694088BB2075F95700147986 /* SwiftyAlgebra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyAlgebra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		694088BE2075F95700147986 /* SwiftyAlgebra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyAlgebra.h; sourceTree = "<group>"; };
 		694088BF2075F95700147986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				694088CB2075F9F500147986 /* Number.swift */,
+				690FBB4F208D34FF0063E50B /* Task.swift */,
+				691E9982209127540051B750 /* Cancellable.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -152,6 +158,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				691E9983209127540051B750 /* Cancellable.swift in Sources */,
+				690FBB50208D34FF0063E50B /* Task.swift in Sources */,
 				694088CC2075F9F500147986 /* Number.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
