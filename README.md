@@ -17,7 +17,7 @@
 	</a>
 </p>
 
-# SwiftyAlgebra
+## At a Glance
 
 Provides set of tools for managing numbers in Swift.
 
