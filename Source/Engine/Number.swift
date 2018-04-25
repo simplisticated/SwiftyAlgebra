@@ -277,9 +277,10 @@ public extension Number {
 /*
  Tasks.
  */
-public extension Number {
+
+internal extension Number {
     
-    public class IsPrimeTask: Task<Number, Bool> {
+    internal class IsPrimeTask: Task<Number, Bool> {
         
         public override func perform(withSource source: Number) {
             guard source.isNatural else {
@@ -312,7 +313,7 @@ public extension Number {
         
     }
     
-    public class NaturalDivisorsTask: Task<Number, [Int]> {
+    internal class NaturalDivisorsTask: Task<Number, [Int]> {
         
         public override func perform(withSource source: Number) {
             guard source.isNatural else {
@@ -343,7 +344,7 @@ public extension Number {
         
     }
     
-    public class PrimeDivisorsTask: Task<Number, [Int]> {
+    internal class PrimeDivisorsTask: Task<Number, [Int]> {
         
         public override func perform(withSource source: Number) {
             guard source.isNatural else {
@@ -378,7 +379,7 @@ public extension Number {
         
     }
     
-    public class PrimeFactorizationTask: Task<Number, [Int]> {
+    internal class PrimeFactorizationTask: Task<Number, [Int]> {
         
         public override func perform(withSource source: Number) {
             guard source.isNatural else {
