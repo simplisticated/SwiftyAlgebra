@@ -159,7 +159,8 @@ public extension Number {
     }
     
     public func isPrime(withCompletion completion: @escaping (_ isPrime: Bool) -> Void) -> Cancellable {
-        let task = IsPrimeTask(source: self) { (result, isCancelled) in
+        let task = IsPrimeTask(source: self)
+        task.onResult { (result, isCancelled) in
             if result != nil {
                 completion(result!)
             }
@@ -186,8 +187,9 @@ public extension Number {
         }
     }
     
-    public func naturalDivisors(withCompletion completion: @escaping (_ divisors: [Int]) -> Void) -> Cancellable {
-        let task = NaturalDivisorsTask(source: self) { (result, isCancelled) in
+    public func naturalDivisors(withCompletion completion: @escaping (_ divisors: [Int]) -> Void) -> Asynchronous {
+        let task = NaturalDivisorsTask(source: self)
+        task.onResult { (result, isCancelled) in
             if result != nil {
                 completion(result!)
             }
@@ -214,8 +216,9 @@ public extension Number {
         }
     }
     
-    public func primeDivisors(withCompletion completion: @escaping (_ divisors: [Int]) -> Void) -> Cancellable {
-        let task = PrimeDivisorsTask(source: self) { (result, isCancelled) in
+    public func primeDivisors(withCompletion completion: @escaping (_ divisors: [Int]) -> Void) -> Asynchronous {
+        let task = PrimeDivisorsTask(source: self)
+        task.onResult { (result, isCancelled) in
             if result != nil {
                 completion(result!)
             }
@@ -258,8 +261,9 @@ public extension Number {
         }
     }
     
-    public func primeFactorization(withCompletion completion: @escaping (_ divisors: [Int]) -> Void) -> Cancellable {
-        let task = PrimeFactorizationTask(source: self) { (result, isCancelled) in
+    public func primeFactorization(withCompletion completion: @escaping (_ divisors: [Int]) -> Void) -> Asynchronous {
+        let task = PrimeFactorizationTask(source: self)
+        task.onResult { (result, isCancelled) in
             if result != nil {
                 completion(result!)
             }
@@ -299,6 +303,8 @@ public extension Number {
                 guard !self.isCancelled else {
                     return
                 }
+                
+                self.progress = Float(i) / Float(integerValue - 1)
             }
             
             self.didFinish(withResult: true)
@@ -328,6 +334,8 @@ public extension Number {
                 guard !self.isCancelled else {
                     return
                 }
+                
+                self.progress = Float(i) / Float(integerValue)
             }
             
             self.didFinish(withResult: divisors)
@@ -361,6 +369,8 @@ public extension Number {
                 guard !self.isCancelled else {
                     return
                 }
+                
+                self.progress = Float(i) / Float(integerValue)
             }
             
             self.didFinish(withResult: divisors)
@@ -412,7 +422,7 @@ public extension Number {
                     break
                 }
                 
-                self.didProgress(1.0 - (Float(divident) / Float(integerValue)))
+                self.progress = 1.0 - (Float(divident) / Float(integerValue))
             }
             
             self.didFinish(withResult: divisors)
