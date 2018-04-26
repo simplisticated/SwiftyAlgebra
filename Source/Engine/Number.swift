@@ -158,7 +158,7 @@ public extension Number {
         }
     }
     
-    public func isPrime(withCompletion completion: @escaping (_ isPrime: Bool) -> Void) -> Cancellable {
+    public func isPrime(withCompletion completion: @escaping (_ isPrime: Bool) -> Void) -> Asynchronous {
         let task = IsPrimeTask(source: self)
         task.onResult { (result, isCancelled) in
             if result != nil {
