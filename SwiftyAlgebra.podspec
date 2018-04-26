@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SwiftyAlgebra"
-  s.version      = "1.5"
+  s.version      = "1.5.1"
   s.summary      = "Algebra implemented in Swift"
 
   # This description is used to generate tags and improve search results.
