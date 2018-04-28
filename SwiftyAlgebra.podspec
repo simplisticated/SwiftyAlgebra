@@ -56,7 +56,7 @@ Provides set of tools for managing numbers in Swift.
   s.author             = { "Igor Matyushkin" => "igormatyushkin014@gmail.com" }
   #s.author    = "Igor Matyushkin"
   # s.authors            = { "Igor Matyushkin" => "igormatyushkin014@gmail.com" }
-  # s.social_media_url   = ""
+  s.social_media_url   = "https://twitter.com/imatyushkin1"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
